@@ -17,7 +17,13 @@ const gqlServer = new ApolloServer({
             hello : String
         }
     `,
-    resolvers : {}
+    resolvers : {
+        Query : {
+            hello : ()=>{
+                return 'Hello OP'
+            }
+        }
+    }
 })
 
 await gqlServer.start()
