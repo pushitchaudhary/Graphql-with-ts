@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "npx nodemon",
+    "build": "rimraf ./build && tsc"
   },
   "author": "",
   "license": "ISC",
@@ -12,7 +13,12 @@
     "dotenv": "^16.4.5",
     "express": "^4.19.2",
     "mysql2": "^3.11.0",
+    "nodemon": "^3.1.4",
     "sequelize-typescript": "^2.1.6",
     "typescript": "^5.5.4"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.21",
+    "tsc-watch": "^6.2.0"
   }
 }
