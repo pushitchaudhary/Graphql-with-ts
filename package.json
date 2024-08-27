@@ -12,11 +12,7 @@
     "dotenv": "^16.4.5",
     "express": "^4.19.2",
     "mysql2": "^3.11.0",
-    "nodemon": "^3.1.4",
-    "sequelize-typescript": "^2.1.6"
-  },
-  "devDependencies": {
-    "@types/express": "^4.17.21",
+    "sequelize-typescript": "^2.1.6",
     "typescript": "^5.5.4"
   }
 }
