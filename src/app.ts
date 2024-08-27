@@ -1,6 +1,8 @@
 import express from 'express'
-import { ApolloServer } from '@apollo/server';
+
 import { expressMiddleware } from '@apollo/server/express4';
+import createApolloServer from './graphql';
+
 
 async function Server() {
     
@@ -9,29 +11,13 @@ const PORT = 8000
 
 app.use(express.json())
 
-// CREATE APOLLO SERVER
-const gqlServer = new ApolloServer({
-    // Schema
-    typeDefs : `        
-        type Query {
-            hello : String
-        }
-    `,
-    resolvers : {
-        Query : {
-            hello : ()=>{
-                return 'Hello OP'
-            }
-        }
-    }
-})
 
-await gqlServer.start()
 
 app.get('/',(req,res)=>{
     res.send('server okk')
 })
 
+const gqlServer = await createApolloServer()
 app.use('/graphql',expressMiddleware(gqlServer))
 
 
