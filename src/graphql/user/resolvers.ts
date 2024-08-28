@@ -1,6 +1,13 @@
-// 4
 
-const queries = {}
-const mutations = {}
+const queries = {
+    createUser : async (_ :any, {}:{})=>{
+        console.log('hereer')
+        return 'hello users opss'
+    }
+}
 
-export const resolvers = {queries,mutations}
+const mutations = {
+}
+
+
+export const resolvers = {queries, mutations}

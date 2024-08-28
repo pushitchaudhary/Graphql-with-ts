@@ -1,30 +1,22 @@
-import express from 'express'
-
+import express from "express";
 import { expressMiddleware } from '@apollo/server/express4';
-import createApolloServer from './graphql';
-
+import createGraphqlServer from "./graphql";
 
 async function Server() {
-    
-const app = express()
-const PORT = 8000
+  const app = express();
+  const PORT = 8000;
+  app.use(express.json());
 
-app.use(express.json())
+  app.get("/", (req, res) => {
+    res.send("server okk !!");
+  });
 
-
-
-app.get('/',(req,res)=>{
-    res.send('server okk')
-})
-
-const gqlServer = await createApolloServer()
-app.use('/graphql',expressMiddleware(gqlServer))
+  app.use('/graphql', expressMiddleware(await createGraphqlServer()))
 
 
-app.listen(PORT, ()=>{
-    console.log(`Server Has Started at ${PORT}`)
-})
-
+  app.listen(PORT, () => {
+    console.log(`Server Has Started at ${PORT}`);
+  });
 }
 
-Server()
+Server();

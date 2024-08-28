@@ -1,4 +1,4 @@
-// 2
+export const queries = `#graphql
+    createUser(name: String) : String
 
-export const queries =`#graphql
 `;
