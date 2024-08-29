@@ -1,25 +1,26 @@
-import { ApolloServer } from '@apollo/server';
-import { Users } from './user';
-
+import { ApolloServer } from "@apollo/server"
+import { User } from "./user"
 
 
 async function createGraphqlServer() {
     const gqlServer = new ApolloServer({
-        typeDefs : `
+        typeDefs: `
+        ${User.typeDefs}
             type Query {
                 hello : String
-                ${Users.queries}
+                ${User.queries}
             }
         `,
         resolvers : {
             Query : {
-                ...Users.resolvers.queries
-            },
+                ...User.resolvers.queries
+            }
         }
-    })    
+    })
 
     await gqlServer.start()
     return gqlServer
+
 }
 
 export default createGraphqlServer

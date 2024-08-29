@@ -1,7 +1,7 @@
 
-import {typeDefs} from './typeDefs'
+import {typeDefs} from './typedef'
 import {queries} from './queries'
 import {mutations} from './mutations'
-import {resolvers} from './resolvers'
+import {resolvers} from './reolvers'
 
-export const Users = {typeDefs, queries, mutations, resolvers}
+export const User = {typeDefs, queries, mutations, resolvers}

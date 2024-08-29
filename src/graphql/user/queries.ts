@@ -1,4 +1,3 @@
 export const queries = `#graphql
-    createUser(name: String) : String
-
-`;
+    helloUser: [Todo]
+`
